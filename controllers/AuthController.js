@@ -74,9 +74,10 @@ exports.login = async (req, res) => {
     // sending token in cookie
     res.cookie("token", token, {
       path: "/",
+      domain: ".vercel.app",
       httpOnly: true, // client side js cannot access the cookie
       expiresIn: new Date(Date.now() + 1000 * 30), // expires in 30s
-      sameSite: "lax",
+      sameSite: "None",
     });
 
     return res.status(200).json({ success: true, message: "Logged in" });
