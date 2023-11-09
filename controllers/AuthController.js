@@ -77,7 +77,7 @@ exports.login = async (req, res) => {
       secure: true,
       httpOnly: true, // client side js cannot access the cookie
       expiresIn: new Date(Date.now() + 1000 * 30), // expires in 30s
-      sameSite: "None",
+      sameSite: "none",
     });
 
     return res.status(200).json({ success: true, message: "Logged in" });
