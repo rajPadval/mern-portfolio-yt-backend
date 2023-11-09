@@ -73,7 +73,7 @@ exports.login = async (req, res) => {
 
     // sending token in cookie
     res.cookie("token", token, {
-      path: "/",
+      // path: "/",
       domain: ".vercel.app",
       secure: true,
       httpOnly: true, // client side js cannot access the cookie
