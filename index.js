@@ -11,7 +11,15 @@ require("dotenv").config();
 connectDB();
 
 // middlewares
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://mern-portfolio-yt-frontend-8mut.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 
